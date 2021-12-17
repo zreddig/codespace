@@ -22,6 +22,11 @@ RUN apt update && \
     apt install acl
 
 
+# Install BFG
+RUN mkdir --parent /opt/share && \
+    curl --location https://repo1.maven.org/maven2/com/madgag/bfg/1.14.0/bfg-1.14.0.jar --output /opt/share/bfg-1.14.0.jar
+
+
 # Install Python packages
 RUN pip3 install git+https://github.com/cs50/submit50@classroom \
     pytz
